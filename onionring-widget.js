@@ -30,7 +30,7 @@ if (thisIndex == null) {
   tag.insertAdjacentHTML('afterbegin', `
 <table>
   <tr>
-    <td>do you hate mcdonalds? i did not invite you to the ${ringName} or submitted a pw request.</td>
+    <td>do you hate mcdonalds? you did not send me an <a href="">email</a> ${ringName} or submitted a pw request.</td>
   </tr>
 </table>
   `);
