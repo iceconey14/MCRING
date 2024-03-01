@@ -3,7 +3,62 @@
   <head>
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf2eoUpAAAAAPjbjFnRamrhZE6s5_FcJY-v0jNZ"></script>
   <!-- Your code -->
-
+  <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6Lf2eoUpAAAAAPjbjFnRamrhZE6s5_FcJY-v0jNZ', {action: 'post'});
+    });
+  }
+</script>
+  <script type="text/javascript">
+		captcha_passed = true;
+		function keyHandler(e, obj, next) {
+			if (window.event) { // IE
+				keynum = e.keyCode;
+			} else if(e.which) { // sane browsers 
+				keynum = e.which;
+			}
+			if (keynum == 0x08 || keynum == 0x09 || (keynum >= 96 && keynum <= 105))
+				return true;
+			keychar = String.fromCharCode(keynum);
+			if (keychar.match(/[0-9A-F]/) == null) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+		function check() {
+			var ids = ["a","b","c","d","e","f"];
+			for (var i = 0; i < 6; i++) {
+				var val = document.getElementById(ids[i]).value;
+				if (val.match(/[0-9a-fA-F][0-9a-fA-F]/) == null) {
+					return false;
+				}
+			}
+			return captcha_passed;
+		}
+		function update() {
+			var ok = check();
+			document.getElementById('submit_btn').disabled = !ok;
+			document.getElementById('submit_btn2').disabled = !ok;
+		}
+		function doNext(obj, next) {
+			if (obj.value.length == 2 && next != null) {
+				document.getElementById(next).value = '';
+				document.getElementById(next).focus();
+			}
+			update();
+		}
+		function captcha_ok() {
+			captcha_passed = true;
+			update();
+		}
+		function captcha_expired() {
+			captcha_passed = false;
+			update();
+		}
+	</script>
   </head>
 <body>
 <!-- modify this form HTML and place wherever you want your form -->
@@ -20,14 +75,11 @@
     <textarea name="message"></textarea>
   </label>
   <!-- your other form fields go here -->
-  <script>
-  function onClick(e) {
-    e.preventDefault();
-    grecaptcha.enterprise.ready(async () => {
-      const token = await grecaptcha.enterprise.execute('6Lf2eoUpAAAAAPjbjFnRamrhZE6s5_FcJY-v0jNZ', {action: 'post'});
-    });
-  }
-</script>
+
+ <div style="float: center; display: inline-block;" class="recaptcha">
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<div class="g-recaptcha" data-sitekey="6Lf2eoUpAAAAAPjbjFnRamrhZE6s5_FcJY-v0jNZ" data-callback="captcha_ok" data-expired-callback="captcha_expired"></div>
+	</div>
   <button type="submit">send</button>
 </form>
 </body>
