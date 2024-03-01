@@ -1,3 +1,11 @@
+<!doctype html>
+<html>
+  <head>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf2eoUpAAAAAPjbjFnRamrhZE6s5_FcJY-v0jNZ"></script>
+  <!-- Your code -->
+
+  </head>
+<body>
 <!-- modify this form HTML and place wherever you want your form -->
 <form
   action="https://formspree.io/f/xvoekjje"
@@ -12,5 +20,15 @@
     <textarea name="message"></textarea>
   </label>
   <!-- your other form fields go here -->
+  <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6Lf2eoUpAAAAAPjbjFnRamrhZE6s5_FcJY-v0jNZ', {action: 'LOGIN'});
+    });
+  }
+</script>
   <button type="submit">send</button>
 </form>
+</body>
+</html>
