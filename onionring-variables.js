@@ -22,7 +22,7 @@ var ringID = 'mcring';
 //should the widget include a link to an index page?
 var useIndex = true;
 //the full URL of the index page. if you're not using one, you don't have to specify anything here
-var indexPage = 'https://iceconey.github.io/MCRING/index.html';
+var indexPage = 'https://iceconey14.github.io/MCRING/index.html';
 
 //should the widget include a random button?
 var useRandom = false;
