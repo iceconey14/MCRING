@@ -1,62 +1,7 @@
 <!doctype html>
 <html>
   <head>
-<script type="text/javascript">
-		captcha_passed = true;
-		function keyHandler(e, obj, next) {
-			if (window.event) { // IE
-				keynum = e.keyCode;
-			} else if(e.which) { // sane browsers 
-				keynum = e.which;
-			}
-			if (keynum == 0x08 || keynum == 0x09 || (keynum >= 96 && keynum <= 105))
-				return true;
-			keychar = String.fromCharCode(keynum);
-			if (keychar.match(/[0-9A-F]/) == null) {
-				return false;
-			} else {
-				return true;
-			}
-		}
-		function check() {
-			var ids = ["a","b","c","d","e","f"];
-			for (var i = 0; i < 6; i++) {
-				var val = document.getElementById(ids[i]).value;
-				if (val.match(/[0-9a-fA-F][0-9a-fA-F]/) == null) {
-					return false;
-				}
-			}
-			return captcha_passed;
-		}
-		function update() {
-			var ok = check();
-			document.getElementById('submit').disabled = !ok;
-	
-		}
-		function doNext(obj, next) {
-			if (obj.value.length == 2 && next != null) {
-				document.getElementById(next).value = '';
-				document.getElementById(next).focus();
-			}
-			update();
-		}
-		function captcha_ok() {
-			captcha_passed = true;
-			update();
-		}
-		function captcha_expired() {
-			captcha_passed = false;
-			update();
-		}
-	</script>
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfQkIYpAAAAAJWFhXM080iPFMh0lX3qmPU8l9Z7"></script>
-  <!-- Your code -->
-<!-- Replace the variables below. -->
-<script>
-  function onSubmit(token) {
-    document.getElementById("demo-form").submit();
-  }
-</script>
+
   </head>
 <body>
 <!-- modify this form HTML and place wherever you want your form -->
@@ -73,14 +18,7 @@
     your message:
     <textarea name="message"></textarea>
   </label>
-  <!-- your other form fields go here -->
-<p></p>
-<button class="g-recaptcha"
-    data-sitekey="6LfQkIYpAAAAAJWFhXM080iPFMh0lX3qmPU8l9Z7"
-    data-callback='onSubmit'
-    data-action='submit'>
-  Submit
-</button>		
+  <!-- your other form fields go here -->		 
 <p></p>
   <button type="submit">send</button>
 </form>
