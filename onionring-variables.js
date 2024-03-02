@@ -21,7 +21,7 @@ var ringName = 'retroring';
 var ringID = 'retro-webring';
 
 //should the widget include a link to an index page?
-var useIndex = true;
+var useIndex = false;
 //the full URL of the index page. if you're not using one, you don't have to specify anything here
 var indexPage = 'https://iceconey14.github.io/retro-webring/index.html';
 
