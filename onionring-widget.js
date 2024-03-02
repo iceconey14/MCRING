@@ -30,7 +30,7 @@ if (thisIndex == null) {
   tag.insertAdjacentHTML('afterbegin', `
 <table>
   <tr>
-    <td>do you hate mcdonalds? you did not send me an <a href="">email</a> ${ringName} or submitted a pw request.</td>
+    <td>do you hate 90s or 2000s? you did not send me an <a href="https://iceconey14.github.io/retro-webring/join/">email</a> for the ${ringName} or submitted a pw request.</td>
   </tr>
 </table>
   `);
@@ -45,7 +45,7 @@ else {
   indexText = ""
   //if you've chosen to include an index, this builds the link to that
   if (useIndex) {
-    indexText = `<a href='${indexPage}'>mcring</a> | `;
+    indexText = `<a href='${indexPage}'>retro webring</a>  `;
   }
 
   randomText = ""
