@@ -22,7 +22,7 @@ var ringID = 'r-wr';
 //should the widget include a link to an index page?
 var useIndex = false;
 //the full URL of the index page. if you're not using one, you don't have to specify anything here
-var indexPage = 'https://iceconey14.github.io/retrowebring/index.html';
+var indexPage = 'https://iceconey14.github.io/retro-webring/index.html';
 
 //should the widget include a random button?
 var useRandom = true;
