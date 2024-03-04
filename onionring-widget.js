@@ -1,6 +1,6 @@
 // onionring.js is made up of four files - onionring-widget.js (this one!), onionring-index.js, onionring-variables.js and onionring.css
 // it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
-// it was originally made by joey + mord of allium (蒜) house, last updated 2020-11-24
+// it was originally made by joey + mord of allium (è’œ) house, last updated 2020-11-24
 
 // === ONIONRING-WIDGET ===
 //this file contains the code which builds the widget shown on each page in the ring. ctrl+f 'EDIT THIS' if you're looking to change the actual html of the widget
@@ -30,7 +30,8 @@ if (thisIndex == null) {
   tag.insertAdjacentHTML('afterbegin', `
 <table>
   <tr>
-    <td>do you hate 90s or 2000s? you did not send me an <a href="https://iceconey14.github.io/retro-webring/join/">email</a> for the ${ringName} or submitted a pw request.</td>
+    <td> <iframe width="468" height="60" style="border:none" src="https://hbaguette.neocities.org/bannerlink/embed.html" name="bannerlink"></iframe> </td>
+  <td> thats what you get... </td>
   </tr>
 </table>
   `);
@@ -51,19 +52,20 @@ else {
   randomText = ""
   //if you've chosen to include a random button, this builds the link that does that
   if (useRandom) {
-    randomText = `<a href='javascript:void(0)' onclick='randomSite()'>random</a>  `;
+    randomText = `<a href='javascript:void(0)' onclick='randomSite()'>im feeling random</a>  `;
   }
 
   //this is the code that displays the widget - EDIT THIS if you want to change the structure
   tag.insertAdjacentHTML('afterbegin', `
   <table>
     <tr>
-      <td class='webring-prev'><a href='${sites[previousIndex]}'> previous</a></td>
+      <td class='webring-prev'><a href='${sites[previousIndex]}'>prev</a></td>
+      <td class='webring-info'>the 2000s rule...</br>
       <span class='webring-links'>
         ${randomText}
         ${indexText}
-        <a href='https://garlic.garden/onionring/'>the script</a></span></td>
-      <td class='webring-next'><a href='${sites[nextIndex]}'>next </a></td>
+        <a href='https://garlic.garden/onionring/'>de script</a></span></td>
+      <td class='webring-next'><a href='${sites[nextIndex]}'>next</a></td>
     </tr>
   </table>
   `);
